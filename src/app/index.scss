@@ -1,0 +1,111 @@
+/**
+ *  Do not remove the comments below. It's the markers used by wiredep to inject
+ *  sass dependencies when defined in the bower.json of your dependencies
+ */
+
+
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// endbower
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700");
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+.navbar-brand {
+  .logo-img {
+    display: inline-block;
+    height: 1em;
+  }
+}
+
+#content {
+  margin-top: 60px;
+}
+
+.username { 
+  color:#FFF; 
+  padding: 15px 0; 
+  margin-right:20px 
+}
+
+/********************* Dialog Box  *********************/
+.ngdialog.ngdialog-theme-default .ngdialog-content{
+  border-radius: 0;
+  font-family: "Helvetica",sans-serif;
+  width:600px;
+  padding: 5px 10px;
+  }
+  
+h3 {
+  font-family:"Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.grid-button {
+    margin: 0;
+    display: table;
+    padding: 15px 12px 0;
+    width: 100%;
+}
+.grid-button input#submitExpenses {
+    margin-right: 10px;
+}
+
+.week-filter {
+    display: table;
+    width: 100%;
+    text-align: right;
+}
+
+.week-filter select {
+    margin: 0 10px 15px 0;
+    padding: 7px 10px;
+    font-weight: bold;
+}
+
+.blue-bar{
+  border-bottom:1px solid #00598d;
+  padding-bottom:5px;  
+}
+/*** View Model ***/
+.view-container {
+  background-color: #f5f5f5;
+  margin: 0 0 10px;
+  padding: 5px;
+}
+.view-container p {
+  border-bottom: 1px solid #ddd;
+  margin: 0 0 10px;
+  padding: 5px;
+}
+
+.view-container p span, .view-container p strong {
+  text-transform: capitalize;
+}
+/*.delete-model form .btn-toolbar .btn:nth-child(2) {
+  display: none;
+}
+.delete-model > .btn {
+  margin: -63px 0 0 60px;
+}*/
+
+/**************** ng-formio-grid ****************/
+.operations {
+  text-align: center;
+  padding-top: 5px;
+}
+.operations a {
+  display: inline-block;
+  margin: 0 1px;
+}
+
+/**
+ *  Do not remove the comments below. It's the markers used by gulp-inject to inject
+ *  all your sass files automatically
+ */
+// injector
+// endinjector

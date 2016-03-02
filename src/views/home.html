@@ -1,0 +1,55 @@
+<div class="col-sm-12" >
+  <h4>Expense Report</h4>
+  <div class="panel panel-default">
+    <div class="panel-heading" style="padding-bottom: 0; border-bottom: none;">
+      <ul class="nav nav-tabs" style="border-bottom: none;">
+          <li ng-if=!setExpenseClass(role) class="active"><a data-toggle="tab" href="#employeetab">Employees</a></li>
+          <li ng-class="role === 'employee' ? 'active' : ''"><a data-toggle="tab" href="#expensetab">Expenses</a></li>
+          <li><a data-toggle="tab" href="#reportstab">Reports</a></li>
+      </ul>
+      
+     <!--  <select>
+        <option value="-">Select Week</option>
+        <option ng-model="weeks" ng-repeat="option in weekOptions" ng-change="changeData()" value="{{option}}">{{option}}</option>
+      </select> -->
+        
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="tab-content">
+            <div ng-if=!setExpenseClass(role) id="employeetab" class="tab-pane fade in active">
+              <div class="row" ng-controller="employeeGrid">
+                
+                <formio-grid refresh-grid='refreshGrid' id="employee" src="'http://voirqgunrcsemml.localhost:3000/employee'" grid-options="gridOptions"></formio-grid>
+                <div class="grid-button">
+                  <a ui-sref="employeeCreate" class="btn btn-primary pull-right"><i class="glyphicon glyphicon-plus"></i> New Employee</a>
+                </div>                
+              </div> 
+            </div>
+            <div ng-class="role === 'employee' ? 'tab-pane fade in active' : 'tab-pane fade'" id="expensetab" class="tab-pane fade">
+              <div class="row" ng-controller="expenseGrid">
+                <div class="week-filter">
+                  <select style="vertical-align:middle;" ng-model="view" ng-change="changeData(view)" ng-options="option for option in weekOptions"><option value="" disabled selected>Select Week</option></select>
+                </div>
+                
+                <formio-grid expose-grid-api='exposeGridApi' formio-select-row='formioSelectRow' formio-grid-date-between='formioGridDateBetween' refresh-grid='refreshGrid' id="expense" src="'http://voirqgunrcsemml.localhost:3000/expense'" grid-options="gridOptions"></formio-grid>
+                <div class="grid-button">
+                  
+                  <a ui-sref="expenseCreate" class="btn btn-primary pull-right"><i class="glyphicon glyphicon-plus"></i> Create Expense</a>
+                  <input type="submit" id="submitExpenses" class="btn btn-primary pull-right"  ng-click="submit()" value="Submit Expenses" />
+
+                </div>
+              </div>
+            </div>
+            <div id="reportstab" class="tab-pane fade">
+              <h3>Menu 2</h3>
+              <p>Some content in menu 2.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
